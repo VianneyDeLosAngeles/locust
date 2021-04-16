@@ -39,7 +39,7 @@ class UUID_ASW(models.Model):
         #se realiza el insert de las ventas 
         for i in range(df.shape[i]-1):
             try:  
-                id_uuid=self.__class__.objects.create(
+                id_uuid=UUID_ASW.__class__.objects.create(
                         tipoDocumento = df.iloc[i,0],\
                         factura = df.iloc[i,1],\
                         fechaFactura = pd.to_datetime(df.iloc[i,2]),\

@@ -31,7 +31,7 @@ class Almacencentrocosto(models.Model):
         #se realiza el insert de las ventas 
         for i in range(df.shape[i]):
             try:  
-                _, _ = self.__class__.objects.update_or_create(almacenASW=str(df.iloc[i,0]),\
+                _, _ = Almacencentrocosto.__class__.objects.update_or_create(almacenASW=str(df.iloc[i,0]),\
                         defaults={
                             'centroCostosSAP': df.iloc[i,1],\
                             'descripcioncentroCostos': df.iloc[i,2],\

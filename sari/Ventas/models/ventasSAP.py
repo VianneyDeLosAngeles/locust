@@ -66,7 +66,7 @@ class ventasSAP(models.Model):
         #se realiza el insert de las ventas 
         for i in range(df.shape[i]-1):
             try:  
-                id_venta=self.__class__.objects.create(
+                id_venta=ventasSAP.__class__.objects.create(
                         numeroDocumento = int(df.iloc[i,1]),\
                         tipoDocumento = df.iloc[i,2],\
                         fechaDocumento = pd.to_datetime(df.iloc[i,3]),\
@@ -125,7 +125,7 @@ class ventasSAP(models.Model):
         #se realiza el insert de las ventas 
         for i in range(df.shape[i]-1):
             try:  
-                id_venta=self.__class__.objects.create(
+                id_venta=ventasSAP.__class__.objects.create(
                         numeroDocumento = int(df.iloc[i,0]),\
                         tipoDocumento = df.iloc[i,1],\
                         fechaDocumento = pd.to_datetime(df.iloc[i,2]),\
